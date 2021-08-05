@@ -122,7 +122,5 @@ export const database = {
             mineralId: 1,
             amountPurchased: 100
         }],
-    chosenMinerals: {
-    
-    }
+    chosenMinerals: {}
 }
