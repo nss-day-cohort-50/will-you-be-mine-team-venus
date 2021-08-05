@@ -1,4 +1,4 @@
-import { venusExport } from "./beMinePractice.js";
+import { venusExport } from "./WillYouBeMine.js";
 
 const mainContainer = document.querySelector("#container")
 

@@ -1,0 +1,12 @@
+.colonyResources {
+    display: flex;
+}
+
+.facilities {
+    display: flex;
+}
+
+.facility-button {
+    display: inline;
+}
+
