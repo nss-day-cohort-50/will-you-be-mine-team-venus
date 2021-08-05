@@ -3,12 +3,12 @@ import { getFacilities } from "./dataAccess.js"
 const facilities = getFacilities()
 
 export const listFacilities = () => {
-    let html = "<ul>"
+    let html = `<ul class="facility-button-list">`
 
     for (const facility of facilities) {
         if (facility.isActive) {
             html += `
-            <li class="facility-button"><button>${facility.name}</button></li>
+            <li><button class="facility-button">${facility.name}</button></li>
             `
         }
     }
