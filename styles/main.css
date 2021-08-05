@@ -2,11 +2,13 @@
     display: flex;
 }
 
-.facilities {
+.facility-button-list {
     display: flex;
+    justify-content: space-between;
+    list-style-type: none;
 }
 
 .facility-button {
-    display: inline;
+    font-size: 30px;
 }
 
