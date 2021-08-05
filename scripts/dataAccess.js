@@ -38,6 +38,7 @@ export const setChosenMineralsColony = (id) => {
 
 export const setGovernors = (id) => {
     database.chosenGovernor.id = id;
+    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
 export const addCustomerOrder = () => {
