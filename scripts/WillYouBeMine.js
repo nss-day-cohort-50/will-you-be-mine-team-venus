@@ -1,6 +1,7 @@
 import { listAvailableResources } from "./Colonies.js"
 import { addCustomerOrder } from "./dataAccess.js"
 import { governors } from "./governors.js"
+import { listFacilities } from "./Facilities.js"
 
 
 document.addEventListener(
@@ -20,29 +21,24 @@ export const venusExport=() => {
 
     return `
     <h1>Will You Be Mine? Team Venus</h1>
+    
+    <article>
+        <section class = "facilities">
+          ${listFacilities()}
+        </section>
+    </article>
 
-    <article class="governorChoices">
+
+    <article class="colonyResources">
         <section class="choices__governor options">
         <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Governors</button>
             ${governors()}
+        </section>
+        <section class="resources">
             ${listAvailableResources()}
-           
-        </section>
-        <section class="choices__sizes options">
-            <h2>Sizes</h2>
-            
-        </section>
-        <section class="choices__styles options">
-            <h2>Styles</h2>
-           
         </section>
     </article>
 
-    <article>
-        <section class = "choices__types options">
-          
-        </section>
-    </article>
 
 
     <article>
