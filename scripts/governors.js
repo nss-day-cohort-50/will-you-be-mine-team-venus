@@ -2,24 +2,30 @@ import { getGovernors, setGovernors, getChosenMinerals } from "./dataAccess.js";
 
 const governorsArray = getGovernors()
 
-document.addEventListener("change", 
-(event) => {
-    if(event.target.name === "governor") {
-        setGovernors(parseInt(event.target.value))
+document.addEventListener("change",
+    (event) => {
+        if (event.target.name === "governor") {
+            setGovernors(parseInt(event.target.value))
+        }
     }
-}
 )
 
 export const governors = () => {
-    const orderBuilder = getChosenMinerals()
-    let HTML ="<select class='dropdown-menu'>"
+    let HTML = `<select class='dropdown-menu' name='governorMenu'>
+    <option disabled selected value> -- Select your Governor -- </option>`
 
     for (const governor of governorsArray) {
+<<<<<<< HEAD
             HTML += `<option name="governor" value="${governor.id}">
             ${governor.name}
             </option>`
         
+=======
+        HTML += `<option name="governor" value="${governor.id}">
+            ${governor.name}
+            </option>`
+>>>>>>> c7a3681929270ee1246bca3a682ea0dbfb3820e5
     }
     HTML += "</select>"
     return HTML
-}   
+}

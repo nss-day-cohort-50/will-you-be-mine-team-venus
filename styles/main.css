@@ -1,0 +1,14 @@
+.colonyResources {
+    display: flex;
+}
+
+.facility-button-list {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.facility-button {
+    font-size: 30px;
+}
+
