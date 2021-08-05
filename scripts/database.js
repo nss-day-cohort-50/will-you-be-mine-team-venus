@@ -10,7 +10,7 @@ export const database = {
             id: 2,
             name: "Keith Parks",
             colonyId: 2,
-            isActive: true
+            isActive: false
         },
         {
             id: 3,
@@ -61,7 +61,7 @@ export const database = {
         {
             id: 2,
             name: "Jakku",
-            isActive: true
+            isActive: false
         },
         {
             id: 3,
@@ -114,13 +114,20 @@ export const database = {
             mineralId: 1,
             facilityId: 1,
             amount: 0
-        }],
+        },],
     availableResources: [
         {
             id: 1,
             colonyId: 1,
             mineralId: 1,
             amountPurchased: 100
+        },{
+            id: 2,
+            colonyId:3,
+            mineralId: 2,
+            amountPurchased:200
         }],
-    chosenMinerals: {}
+    chosenMinerals: {},
+
+    chosenColony:{}
 }

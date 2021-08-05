@@ -28,12 +28,16 @@ export const getChosenMinerals = () => {
     return database.chosenMinerals
 }
 
+export const getChosenGovernor = () => {
+    return database.chosenGovernor
+}
+
 export const setChosenMineralsColony = (id) => {
     database.mineralAtFacility.id = id;
 }
 
 export const setGovernors = (id) => {
-    database.governors.id = id;
+    database.chosenGovernor.id = id;
 }
 
 export const addCustomerOrder = () => {
