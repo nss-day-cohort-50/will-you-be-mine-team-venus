@@ -15,11 +15,10 @@ export const governors = () => {
     let HTML ="<select class='dropdown-menu'>"
 
     for (const governor of governorsArray) {
-        if(orderBuilder.id === governor.id) {
             HTML += `<option name="governor" value="${governor.id}">
             ${governor.name}
             </option>`
-        }
+        
     }
     HTML += "</select>"
     return HTML
