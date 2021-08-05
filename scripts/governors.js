@@ -1,10 +1,12 @@
 import { getGovernors, setGovernors } from "./dataAccess.js";
+import { listAvailableResources } from "./Colonies.js"
+import { renderResources } from "./main.js";
 
 const governorsArray = getGovernors()
 
 document.addEventListener("change",
     (event) => {
-        if (event.target.name === "governor") {
+        if (event.target.name === "governorMenu") {
             setGovernors(parseInt(event.target.value))
         }
     }

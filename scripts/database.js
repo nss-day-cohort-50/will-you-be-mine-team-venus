@@ -61,7 +61,7 @@ export const database = {
         {
             id: 2,
             name: "Jakku",
-            isActive: false
+            isActive: true
         },
         {
             id: 3,
@@ -114,20 +114,33 @@ export const database = {
             mineralId: 1,
             facilityId: 1,
             amount: 0
-        },],
+        }],
     availableResources: [
         {
             id: 1,
-            colonyId: 1,
-            mineralId: 1,
-            amountPurchased: 100
-        },{
-            id: 2,
-            colonyId:3,
+            colonyId: 3,
             mineralId: 2,
-            amountPurchased:200
+            amountPurchased: 100
+        },
+        {
+            id: 2,
+            colonyId: 7,
+            mineralId: 3,
+            amountPurchased: 100
+        },
+        {
+            id: 3,
+            colonyId: 6,
+            mineralId: 3,
+            amountPurchased: 100
+        },
+        {
+            id: 4,
+            colonyId: 5,
+            mineralId: 5,
+            amountPurchased: 100
         }],
-    chosenMinerals: {},
-
-    chosenColony:{}
+        chosenMinerals: {
+        
+    }
 }

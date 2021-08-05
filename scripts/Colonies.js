@@ -1,4 +1,4 @@
-import { getAvailableResources, getChosenGovernor, getColonies, getGovernors, getMineralAtFacility, getMinerals} from "./dataAccess.js";
+import { getAvailableResources, getChosenGovernor, getColonies, getGovernors, getMineralAtFacility, getMinerals } from "./dataAccess.js";
 
 
 const governorsArray = getGovernors()
@@ -6,20 +6,17 @@ const colonies = getColonies()
 const availableResources = getAvailableResources()
 const mineralsAtFacility = getMineralAtFacility()
 const minerals = getMinerals()
-const getGovernor= getChosenGovernor()
 
 export const listAvailableResources = () => {
     let html = `<ul>`
 
     const foundColony = colonies.find(
-      (colony) => {
-          for (const governor of governorsArray) {
-              return colony.id === governor.colonyId
-              
-          }
-      }  
+        (colony) => {
+            for (const governor of governorsArray) {
+                return colony.id === governor.colonyId
+            }
+        }
     )
-
 
     const foundResources = availableResources.find(
         (resource) => {
@@ -29,9 +26,9 @@ export const listAvailableResources = () => {
         }
     )
 
-    const foundFacilityMinerals = mineralsAtFacility.find (
+    const foundFacilityMinerals = mineralsAtFacility.find(
         (facilityMineral) => {
-            if(foundResources.mineralId === facilityMineral.id) {
+            if (foundResources.mineralId === facilityMineral.id) {
                 return facilityMineral
             }
         }
@@ -39,7 +36,7 @@ export const listAvailableResources = () => {
 
     const mineralName = minerals.find(
         (mineral) => {
-            if(foundFacilityMinerals.mineralId === mineral.id) {
+            if (foundFacilityMinerals.mineralId === mineral.id) {
                 return mineral
             }
         }
