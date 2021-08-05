@@ -2,8 +2,6 @@ import { getFacilities } from "./dataAccess.js"
 
 const facilities = getFacilities()
 
-
-
 export const listFacilities = () => {
     let html = `<ul class="facility-button-list">`
 

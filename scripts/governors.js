@@ -19,7 +19,6 @@ export const governors = () => {
         HTML += `<option name="governor" value="${governor.id}">
             ${governor.name}
             </option>`
-        }
     }
     HTML += "</select>"
     return HTML
