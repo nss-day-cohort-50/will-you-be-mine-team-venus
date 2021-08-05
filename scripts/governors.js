@@ -15,10 +15,11 @@ export const governors = () => {
     <option disabled selected value> -- Select your Governor -- </option>`
 
     for (const governor of governorsArray) {
-        if(governor.isActive === true){
-        HTML += `<option name="governor" value="${governor.id}">
+        if (governor.isActive === true) {
+            HTML += `<option name="governor" value="${governor.id}">
             ${governor.name}
             </option>`
+        }
     }
     HTML += "</select>"
     return HTML
