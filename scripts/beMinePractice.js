@@ -1,3 +1,4 @@
+import { listAvailableResources } from "./Colonies.js"
 import { addCustomerOrder } from "./dataAccess.js"
 import { governors } from "./governors.js"
 
@@ -24,6 +25,7 @@ export const venusExport=() => {
         <section class="choices__governor options">
         <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Governors</button>
             ${governors()}
+            ${listAvailableResources()}
            
         </section>
         <section class="choices__sizes options">
