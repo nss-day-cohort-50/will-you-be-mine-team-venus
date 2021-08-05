@@ -4,16 +4,16 @@ import { governors } from "./governors.js"
 import { listFacilities } from "./Facilities.js"
 
 
-document.addEventListener(
-    "click",
-    (event) => {
-        if (event.target.id === "orderButton") {
-        addCustomerOrder()
-        console.log('button click')
+// document.addEventListener(
+//     "click",
+//     (event) => {
+//         if (event.target.id === "orderButton") {
+//         addCustomerOrder()
+//         console.log('button click')
         
-        }
-    }
-)
+//         }
+//     }
+// )
 
 export const venusExport=() => {
 
@@ -23,8 +23,7 @@ export const venusExport=() => {
     <h1>Will You Be Mine? Team Venus</h1>
     
     <article>
-        <section class="facilities">
-          ${listFacilities()}
+        <section id="facilitiesContainer" class="facilities">
         </section>
     </article>
 
@@ -34,7 +33,7 @@ export const venusExport=() => {
 
     <article class="colonyResources">
         <section class="choices__governor options">
-        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Governors</button>
+        Governors:
             ${governors()}
         </section>
         <section class="resources">

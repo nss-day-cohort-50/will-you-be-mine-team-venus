@@ -11,8 +11,8 @@ document.addEventListener("change",
 )
 
 export const governors = () => {
-    const orderBuilder = getChosenMinerals()
-    let HTML = "<select class='dropdown-menu'>"
+    let HTML = `<select class='dropdown-menu' name='governorMenu'>
+    <option disabled selected value> -- Select your Governor -- </option>`
 
     for (const governor of governorsArray) {
         HTML += `<option name="governor" value="${governor.id}">
