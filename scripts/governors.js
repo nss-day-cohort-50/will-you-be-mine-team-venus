@@ -15,16 +15,9 @@ export const governors = () => {
     <option disabled selected value> -- Select your Governor -- </option>`
 
     for (const governor of governorsArray) {
-<<<<<<< HEAD
-            HTML += `<option name="governor" value="${governor.id}">
-            ${governor.name}
-            </option>`
-        
-=======
         HTML += `<option name="governor" value="${governor.id}">
             ${governor.name}
             </option>`
->>>>>>> c7a3681929270ee1246bca3a682ea0dbfb3820e5
     }
     HTML += "</select>"
     return HTML
