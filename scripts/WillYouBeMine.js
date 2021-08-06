@@ -1,3 +1,4 @@
+import { listAvailableResources } from "./AvailableResources.js"
 import { renderFacilities } from "./Facilities.js"
 import { governors } from "./governors.js"
 
@@ -44,7 +45,7 @@ export const venusExport=() => {
             ${governors()}
         </section>
         <section id="availableResources">
-
+            ${listAvailableResources()}
         </section>
     </article>
     `

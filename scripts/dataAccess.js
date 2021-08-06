@@ -24,14 +24,6 @@ export const getAvailableResources = () => {
     return database.availableResources.map(mineral => ({...mineral}))
 }
 
-export const getChosenMinerals = () => {
-    return database.chosenMinerals
-}
-
-export const getChosenGovernor = () => {
-    return database.chosenGovernor
-}
-
 export const setChosenMineralsColony = (id) => {
     database.mineralAtFacility.id = id;
 }
