@@ -140,7 +140,10 @@ export const database = {
             mineralId: 5,
             amountPurchased: 100
         }],
-        chosenMinerals: {
-        
-    }
+        transientState: {
+            chosenMinerals: [],
+            selectedFacility: 0,
+            chosenGovernor: 0
+
+        }
 }
