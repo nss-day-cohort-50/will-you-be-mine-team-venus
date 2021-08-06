@@ -27,28 +27,13 @@ export const listAvailableResources = () => {
         }
     )
 
-    const foundMineralResources = () => {
-        return foundAvailableResources.map(mineral => ({ ...mineral }))
-    }
-
-    const mineralResourcesArray = foundMineralResources()
-
-    const foundMineralIds = minerals.filter(
-        (mineral) => {
-            return mineralResourcesArray['mineralId'] === mineral.id
+    for (const resource of foundAvailableResources){
+        for( const mineral of minerals){
+            if(mineral.id === resource.mineralId){
+                html += `<li>${resource.amountPurchased} tons of ${mineral.name}</li>`
+            }
         }
-    )
-
-    // const foundMineralNames = foundMineralIds.filter(
-    //     (mineral) => {
-    //         return foundMineralIds === mineral.id
-    //     }
-    // )
-
-    // for (const foundMineral of foundMineralNames) {
-    //     html += `<li>${foundMineral.name}</li>`
-    // }
-
+    }
 
     html += `</ul>`
     return html

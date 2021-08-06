@@ -309,6 +309,5 @@ export const database = {
             chosenMinerals: [],
             selectedFacility: 0,
             chosenGovernor: 1
-
         }
 }
