@@ -41,7 +41,7 @@ export const venusExport=() => {
             ${governors()}
         </section>
         <section id="availableResources">
-            
+            ${listAvailableResources()}
         </section>
     </article>
     `

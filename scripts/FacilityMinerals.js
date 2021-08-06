@@ -11,7 +11,7 @@ export const renderFacilityMineralsList = (facilityId) => {
             (mineral) => {
                 if (mineral.id === mineralAtFacility.mineralId) {
                     return `
-                    <li>${mineralAtFacility.amount} tons of ${mineral.name}</li>
+                    <li>${mineralAtFacility.amount} tons of ${foundMineralArray.name}</li>
                     `
                 }
             }
@@ -22,7 +22,7 @@ export const renderFacilityMineralsList = (facilityId) => {
     return html
 }
 
-export const renderFacilityMineralsHTML = () => {
-    const resourceContainer = document.querySelector('#listResources')
-    resourceContainer.innerHTML = renderFacilityMineralsList()
-}
+// export const renderFacilityMineralsHTML = () => {
+//     const resourceContainer = document.querySelector('#listResources')
+//     resourceContainer.innerHTML = renderFacilityMineralsList()
+// }
