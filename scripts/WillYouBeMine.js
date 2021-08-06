@@ -1,7 +1,6 @@
-import { listAvailableResources } from "./Colonies.js"
-import { addCustomerOrder } from "./dataAccess.js"
+import { renderFacilities } from "./Facilities.js"
 import { governors } from "./governors.js"
-import { listFacilities } from "./Facilities.js"
+
 
 
 // document.addEventListener(
@@ -14,6 +13,14 @@ import { listFacilities } from "./Facilities.js"
 //         }
 //     }
 // )
+document.addEventListener("change",
+(event) => {
+    if (event.target.name === "governorMenu") {
+            renderFacilities()
+        }
+    }
+    )
+
 
 export const venusExport=() => {
 

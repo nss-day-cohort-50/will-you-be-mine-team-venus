@@ -37,8 +37,12 @@ export const setChosenMineralsColony = (id) => {
 }
 
 export const setGovernors = (id) => {
-    database.chosenGovernor.id = id;
+    database.transientState.chosenGovernor = id;
     document.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
+export const getTransientState = () => {
+    return database.transientState
 }
 
 export const addCustomerOrder = () => {
