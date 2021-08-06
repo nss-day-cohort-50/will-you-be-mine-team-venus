@@ -4,7 +4,7 @@ const resources = getAvailableResources()
 const transientState = getTransientState()
 const colonies = getColonies()
 const governors = getGovernors()
-const minerals = getMinerals ()
+const minerals = getMinerals()
 
 export const listAvailableResources = () => {
     let html = `<ul>`
@@ -27,17 +27,27 @@ export const listAvailableResources = () => {
         }
     )
 
-    const foundMinerals = minerals.filter(
-        (mineral) => {
-            return foundAvailableResources.mineralId === mineral.id
-        }
-    )
-    
-
-    for (const foundMineral of foundMinerals) {
-        html += `<li>${foundMineral.name}</li>`
+    const foundMineralResources = () => {
+        return foundAvailableResources.map(mineral => ({ ...mineral }))
     }
 
+    const mineralResourcesArray = foundMineralResources()
+
+    const foundMineralIds = minerals.filter(
+        (mineral) => {
+            return mineralResourcesArray['mineralId'] === mineral.id
+        }
+    )
+
+    // const foundMineralNames = foundMineralIds.filter(
+    //     (mineral) => {
+    //         return foundMineralIds === mineral.id
+    //     }
+    // )
+
+    // for (const foundMineral of foundMineralNames) {
+    //     html += `<li>${foundMineral.name}</li>`
+    // }
 
 
     html += `</ul>`
