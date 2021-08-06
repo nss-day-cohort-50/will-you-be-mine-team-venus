@@ -1,7 +1,8 @@
-import { getFacilities, setFacility } from "./dataAccess.js"
+import { getFacilities, getTransientState, setFacility } from "./dataAccess.js"
 import { renderFacilityMineralsList } from "./FacilityMinerals.js"
 
 const facilities = getFacilities()
+const transientState = getTransientState()
 
 document.addEventListener("click",
     (event) => {
@@ -17,21 +18,25 @@ document.addEventListener("click",
     }
 )
 
-const listFacilities = () => {
-    let html = `<ul class="facility-button-list">`
+export const listFacilities = () => {
+    if (transientState.chosenGovernor > 0) {
+        let html = `<h2 class="select_facility">Select Facility</h2>`
 
-    for (const facility of facilities) {
-        if (facility.isActive === true) {
-            html += `
-            <li><button class="facility-button" name="facility-button__${facility.id}">${facility.name}</button>
-            <section id="listResources">
+        html += `<ul class="facility-button-list">`
+
+        for (const facility of facilities) {
+            if (facility.isActive === true) {
+                html += `
+            <li><button class="facility-button__${facility.id}" name="facility-button__${facility.id}">${facility.name}</button>`
+                html += `<section id="listResources">
                 ${renderFacilityMineralsList()}
-            </section>
-            </li> 
-            `
+            </section></li>`
+            }
         }
-    }
 
-    html += "</ul>"
-    return html
+        html += "</ul>"
+        return html
+    } else {
+        return ''
+    }
 }

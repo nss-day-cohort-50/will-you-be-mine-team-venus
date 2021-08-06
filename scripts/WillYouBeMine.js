@@ -1,25 +1,8 @@
-
-import { renderFacilities } from "./Facilities.js"
 import { governors } from "./governors.js"
 import { listAvailableResources } from "./AvailableResources.js"
+import { listFacilities } from "./Facilities.js"
 
-
-const renderResourcesHTML = () => {
-    const availableResources = document.querySelector("#availableResources")
-    availableResources.innerHTML = listAvailableResources()
-}
-
-document.addEventListener("change",
-(event) => {
-    if (event.target.name === "governorMenu") {
-            renderFacilities()
-            renderResourcesHTML()
-        }
-    }
-    )
-
-
-export const venusExport=() => {
+export const venusExport = () => {
 
 
 
@@ -28,6 +11,7 @@ export const venusExport=() => {
     
     <article>
         <section id="facilitiesContainer" class="facilities">
+            ${listFacilities()}
         </section>
     </article>
 
