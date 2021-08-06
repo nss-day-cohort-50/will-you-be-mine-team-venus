@@ -45,11 +45,7 @@ export const database = {
         },
         {
             id: 4,
-            name: "Bread"
-        },
-        {
-            id: 5,
-            name: "Rice"
+            name: "Carbon"
         }
     ],
     facilities: [
@@ -118,32 +114,200 @@ export const database = {
     availableResources: [
         {
             id: 1,
-            colonyId: 3,
-            mineralId: 2,
+            colonyId: 1,
+            mineralId: 1,
             amountPurchased: 100
         },
         {
             id: 2,
-            colonyId: 7,
-            mineralId: 3,
+            colonyId: 1,
+            mineralId: 2,
             amountPurchased: 100
         },
         {
             id: 3,
-            colonyId: 6,
+            colonyId: 1,
             mineralId: 3,
             amountPurchased: 100
         },
         {
             id: 4,
-            colonyId: 5,
-            mineralId: 5,
+            colonyId: 1,
+            mineralId: 4,
             amountPurchased: 100
-        }],
+        },
+        {
+            id: 5,
+            colonyId: 2,
+            mineralId: 1,
+            amountPurchased: 80
+        },
+        {
+            id: 6,
+            colonyId: 2,
+            mineralId: 2,
+            amountPurchased: 80
+        },
+        {
+            id: 7,
+            colonyId: 2,
+            mineralId: 3,
+            amountPurchased: 80
+        },
+        {
+            id: 8,
+            colonyId: 2,
+            mineralId: 4,
+            amountPurchased: 80
+        },
+        {
+            id: 9,
+            colonyId: 3,
+            mineralId: 1,
+            amountPurchased: 90
+        },
+        {
+            id: 10,
+            colonyId: 3,
+            mineralId: 2,
+            amountPurchased: 90
+        },
+        {
+            id: 11,
+            colonyId: 3,
+            mineralId: 3,
+            amountPurchased: 90
+        },
+        {
+            id: 12,
+            colonyId: 3,
+            mineralId: 4,
+            amountPurchased: 90
+        },
+        {
+            id: 13,
+            colonyId: 4,
+            mineralId: 1,
+            amountPurchased: 50
+        },
+        {
+            id: 14,
+            colonyId: 4,
+            mineralId: 2,
+            amountPurchased: 50
+        },
+        {
+            id: 15,
+            colonyId: 4,
+            mineralId: 3,
+            amountPurchased: 50
+        },
+        {
+            id: 16,
+            colonyId: 4,
+            mineralId: 4,
+            amountPurchased: 50
+        },
+        {
+            id: 17,
+            colonyId: 5,
+            mineralId: 1,
+            amountPurchased: 100
+        },
+        {
+            id: 18,
+            colonyId: 5,
+            mineralId: 2,
+            amountPurchased: 100
+        },
+        {
+            id: 19,
+            colonyId: 5,
+            mineralId: 3,
+            amountPurchased: 100
+        },
+        {
+            id: 20,
+            colonyId: 5,
+            mineralId: 4,
+            amountPurchased: 100
+        },
+        {
+            id: 21,
+            colonyId: 6,
+            mineralId: 1,
+            amountPurchased: 100
+        },
+        {
+            id: 22,
+            colonyId: 6,
+            mineralId: 2,
+            amountPurchased: 100
+        },
+        {
+            id: 23,
+            colonyId: 6,
+            mineralId: 3,
+            amountPurchased: 100
+        },
+        {
+            id: 24,
+            colonyId: 6,
+            mineralId: 4,
+            amountPurchased: 100
+        },
+        {
+            id: 25,
+            colonyId: 7,
+            mineralId: 1,
+            amountPurchased: 100
+        },
+        {
+            id: 26,
+            colonyId: 7,
+            mineralId: 2,
+            amountPurchased: 100
+        },
+        {
+            id: 27,
+            colonyId: 7,
+            mineralId: 3,
+            amountPurchased: 100
+        },
+        {
+            id: 28,
+            colonyId: 7,
+            mineralId: 4,
+            amountPurchased: 100
+        },
+        {
+            id: 29,
+            colonyId: 8,
+            mineralId: 1,
+            amountPurchased: 100
+        },
+        {
+            id: 30,
+            colonyId: 8,
+            mineralId: 2,
+            amountPurchased: 100
+        },
+        {
+            id: 31,
+            colonyId: 8,
+            mineralId: 3,
+            amountPurchased: 100
+        },
+        {
+            id: 32,
+            colonyId: 8,
+            mineralId: 4,
+            amountPurchased: 100
+        },
+],
         transientState: {
             chosenMinerals: [],
             selectedFacility: 0,
-            chosenGovernor: 0
-
+            chosenGovernor: 1
         }
 }
