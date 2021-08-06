@@ -1,6 +1,7 @@
 import { getGovernors, setGovernors, getTransientState } from "./dataAccess.js";
 
 
+
 const transientStateGovernor = getTransientState()
 const governorsArray = getGovernors()
 
@@ -8,6 +9,7 @@ document.addEventListener("change",
     (event) => {
         if (event.target.name === "governorMenu") {
             setGovernors(parseInt(event.target.value))
+            document.dispatchEvent(new CustomEvent("stateChanged"))
         }
     }
 )
