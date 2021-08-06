@@ -1,23 +1,19 @@
-import { listAvailableResources } from "./AvailableResources.js"
+
 import { renderFacilities } from "./Facilities.js"
 import { governors } from "./governors.js"
+import { listAvailableResources } from "./AvailableResources.js"
 
 
+const renderResourcesHTML = () => {
+    const availableResources = document.querySelector("#availableResources")
+    availableResources.innerHTML = listAvailableResources()
+}
 
-// document.addEventListener(
-//     "click",
-//     (event) => {
-//         if (event.target.id === "orderButton") {
-//         addCustomerOrder()
-//         console.log('button click')
-        
-//         }
-//     }
-// )
 document.addEventListener("change",
 (event) => {
     if (event.target.name === "governorMenu") {
             renderFacilities()
+            renderResourcesHTML()
         }
     }
     )
@@ -45,7 +41,7 @@ export const venusExport=() => {
             ${governors()}
         </section>
         <section id="availableResources">
-            ${listAvailableResources()}
+            
         </section>
     </article>
     `
