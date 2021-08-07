@@ -27,16 +27,21 @@ export const listFacilities = () => {
         for (const facility of facilities) {
             if (facility.isActive === true) {
                 html += `
-            <li><button class="facility-button__${facility.id}" name="facility-button__${facility.id}">${facility.name}</button>`
-                html += `<section id="listResources">
-                ${renderFacilityMineralsList()}
-            </section></li>`
+            <li><button class="facility-button__${facility.id}" name="facility-button__${facility.id}">${facility.name}</button></li>`
             }
         }
 
         html += "</ul>"
+        
+        for (const facility of facilities) {
+            if (facility.id === transientState.selectedFacility) {
+                html += `<section id="listResources">
+                ${renderFacilityMineralsList()}
+            </section>`
+            }
+        }
         return html
     } else {
-        return ''
+        return '<h2>Select Your Governor</h2>'
     }
 }

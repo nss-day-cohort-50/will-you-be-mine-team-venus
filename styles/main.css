@@ -38,3 +38,6 @@
     padding: 10px;
 }
 
+#orderButton {
+    display: none;
+}
