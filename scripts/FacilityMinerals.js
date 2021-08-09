@@ -5,23 +5,25 @@ const minerals = getMinerals()
 const transientState = getTransientState()
 const facilityResources = getMineralAtFacility()
 const facilities = getFacilities()
-const chosenMinerals = transientState.chosenMinerals;
+
 
 document.addEventListener(
     "change",
     (event) => {
         if (event.target.name === "mineral") {
-            
             setChosenMineral(parseInt(event.target.value))
-            console.log(chosenMinerals)
         }
     }
 )
 
 export const renderFacilityMineralsList = () => {
+
+    const chosenMinerals = database.transientState.chosenMinerals;
+
     if (transientState.selectedFacility > 0) {
         let html = `<h3>Available Minerals:</h3>`
         html += `<ul class="facility-mineral-list">`
+
 
         const foundFacilityResources = facilityResources.filter(
             (resource) => {
@@ -29,24 +31,32 @@ export const renderFacilityMineralsList = () => {
             }
         )
 
-        for (const resource of foundFacilityResources) {
-            for (const mineral of minerals) {
-                if (resource.mineralId === mineral.id) {
-                    if (transientState.chosenMinerals === resource.id){
-                        html += `<input type="radio" name="mineral" value="${resource.id}" checked>${resource.amount} tons of ${mineral.name}</input>`}
-                    else{
-                        html += `<input type="radio" name="mineral" value="${resource.id}">${resource.amount} tons of ${mineral.name}</input>`
-                    }
-                }
-            }
-        }
+        for (const facilityMineral of foundFacilityResources) {
 
+            const mineral = minerals.find(
+                (mineral) => {
+                    return mineral.id === facilityMineral.mineralId
+                }
+            )
+
+            const foundChosenMineral = chosenMinerals.find(
+                (mineralObject) => {
+                    return mineralObject.facilityId === facilityMineral.facilityId
+                }
+            )
+
+            if (foundChosenMineral.facilityId === facilityMineral.facilityId && foundChosenMineral.facilityMineralId === facilityMineral.id) {
+                html += `<input type="radio" name="mineral" value="${facilityMineral.id}" checked>${facilityMineral.amount} tons of ${mineral.name}</input>`
+            } else {
+                html += `<input type="radio" name="mineral" value="${facilityMineral.id}">${facilityMineral.amount} tons of ${mineral.name}</input>`
+            }
+
+        }
         html += `</ul>`
         return html
-    } else {
-        return ''
     }
 }
+
 
 export const listFacilityMinerals = () => {
     let html = ''

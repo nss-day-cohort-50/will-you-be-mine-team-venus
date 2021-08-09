@@ -382,19 +382,19 @@ export const database = {
             chosenMinerals: [
                 {
                     facilityId: 1,
-                    resourceId: 0,
+                    facilityMineralId: 0,
                 },
                 {
                     facilityId: 2,
-                    resourceId: 0
+                    facilityMineralId: 0
                 },
                 {
                     facilityId: 3,
-                    resourceId: 0
+                    facilityMineralId: 0
                 },
                 {
                     facilityId: 4,
-                    resourceId: 0
+                    facilityMineralId: 0
                 }
             ],
             selectedFacility: 0,
