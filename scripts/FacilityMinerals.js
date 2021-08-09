@@ -1,16 +1,19 @@
 import { getFacilities, getMineralAtFacility, getMinerals, getTransientState, setChosenMineral } from "./dataAccess.js";
+import { database } from "./database.js";
 
 const minerals = getMinerals()
 const transientState = getTransientState()
 const facilityResources = getMineralAtFacility()
 const facilities = getFacilities()
+const chosenMinerals = transientState.chosenMinerals;
 
 document.addEventListener(
     "change",
     (event) => {
         if (event.target.name === "mineral") {
+            
             setChosenMineral(parseInt(event.target.value))
-            console.log(transientState.chosenMinerals)
+            console.log(chosenMinerals)
         }
     }
 )

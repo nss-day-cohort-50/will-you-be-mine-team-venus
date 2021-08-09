@@ -25,7 +25,16 @@ export const getAvailableResources = () => {
 }
 
 export const setChosenMineral = (resourceId) => {
-    database.transientState.chosenMinerals = resourceId;
+    const chosenMinerals = database.transientState.chosenMinerals;
+
+    const foundTransientFacility = chosenMinerals.find(
+        (mineral) => {
+            return database.transientState.selectedFacility === mineral.facilityId
+        }
+    )
+
+    foundTransientFacility.resourceId = resourceId;
+
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
