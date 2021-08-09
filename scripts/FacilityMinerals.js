@@ -46,9 +46,9 @@ export const renderFacilityMineralsList = () => {
             )
 
             if (foundChosenMineral.facilityId === facilityMineral.facilityId && foundChosenMineral.facilityMineralId === facilityMineral.id) {
-                html += `<input type="radio" name="mineral" value="${facilityMineral.id}" checked>${facilityMineral.amount} tons of ${mineral.name}</input>`
+                html += `<li><input type="radio" name="mineral" value="${facilityMineral.id}" checked>${facilityMineral.amount} tons of ${mineral.name}</input></li>`
             } else {
-                html += `<input type="radio" name="mineral" value="${facilityMineral.id}">${facilityMineral.amount} tons of ${mineral.name}</input>`
+                html += `<li><input type="radio" name="mineral" value="${facilityMineral.id}">${facilityMineral.amount} tons of ${mineral.name}</input></li>`
             }
 
         }
@@ -73,15 +73,29 @@ export const listFacilityMinerals = () => {
 
 export const renderSections = () => {
     let html = ''
-    html += `<section id="facility1">`
+    html += `<section class="mineral-list">`
     if (transientState.selectedFacility === 1) {
         html += renderFacilityMineralsList()
-    } else if (transientState.selectedFacility === 2) {
-        html += renderFacilityMineralsList()
-    } else if (transientState.selectedFacility === 3) {
-        html += renderFacilityMineralsList()
-    } else if (transientState.selectedFacility === 5) {
+    }
+    html += `</section>`
+
+    html += `<section class="mineral-list">`
+    if (transientState.selectedFacility === 2) {
         html += renderFacilityMineralsList()
     }
+    html += `</section>`
+
+    html += `<section class="mineral-list">`
+    if (transientState.selectedFacility === 3) {
+        html += renderFacilityMineralsList()
+    }
+    html += `</section>`
+
+    html += `<section class="mineral-list">`
+    if (transientState.selectedFacility === 4) {
+        html += renderFacilityMineralsList()
+    }
+    html += `</section>`
+
     return html
 }
