@@ -33,7 +33,7 @@ export const setChosenMineral = (resourceId) => {
         }
     )
 
-    foundTransientFacility.resourceId = resourceId;
+    foundTransientFacility.facilityMineralId = resourceId;
 
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
