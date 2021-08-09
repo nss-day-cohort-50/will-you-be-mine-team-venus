@@ -379,7 +379,7 @@ export const database = {
         },
 ],
         transientState: {
-            chosenMinerals: [],
+            chosenMinerals: [0],
             selectedFacility: 0,
             chosenGovernor: 0
         }

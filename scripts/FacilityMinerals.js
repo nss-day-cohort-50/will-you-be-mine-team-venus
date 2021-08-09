@@ -1,18 +1,19 @@
-import { getFacilities, getMineralAtFacility, getMinerals, getTransientState } from "./dataAccess.js";
+import { getFacilities, getMineralAtFacility, getMinerals, getTransientState, setChosenMineral } from "./dataAccess.js";
 
 const minerals = getMinerals()
 const transientState = getTransientState()
 const facilityResources = getMineralAtFacility()
 const facilities = getFacilities()
 
-// document.addEventListener("changed",
-//     (event) => {
-//         if(event.target.name === `facility-button__${facility.id}`){
-
-//             document.dispatchEvent(new CustomEvent("stateChanged"))
-//         }
-//     }
-// )
+document.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.name === "mineral") {
+            setChosenMineral(parseInt(event.target.value))
+            console.log(transientState.chosenMinerals)
+        }
+    }
+)
 
 export const renderFacilityMineralsList = () => {
     if (transientState.selectedFacility > 0) {
@@ -28,7 +29,11 @@ export const renderFacilityMineralsList = () => {
         for (const resource of foundFacilityResources) {
             for (const mineral of minerals) {
                 if (resource.mineralId === mineral.id) {
-                    html += `<li>${resource.amount} tons of ${mineral.name}</li>`
+                    if (transientState.chosenMinerals === resource.id){
+                        html += `<input type="radio" name="mineral" value="${resource.id}" checked>${resource.amount} tons of ${mineral.name}</input>`}
+                    else{
+                        html += `<input type="radio" name="mineral" value="${resource.id}">${resource.amount} tons of ${mineral.name}</input>`
+                    }
                 }
             }
         }
