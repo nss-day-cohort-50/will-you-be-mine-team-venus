@@ -24,8 +24,9 @@ export const getAvailableResources = () => {
     return database.availableResources.map(mineral => ({...mineral}))
 }
 
-export const setChosenMineralsColony = (id) => {
-    database.mineralAtFacility.id = id;
+export const setChosenMineral = (resourceId) => {
+    database.transientState.chosenMinerals = resourceId;
+    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
 export const setGovernors = (id) => {
