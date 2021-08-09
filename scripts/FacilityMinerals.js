@@ -70,3 +70,18 @@ export const listFacilityMinerals = () => {
     }
     return html
 }
+
+export const renderSections = () => {
+    let html = ''
+    html += `<section id="facility1">`
+    if (transientState.selectedFacility === 1) {
+        html += renderFacilityMineralsList()
+    } else if (transientState.selectedFacility === 2) {
+        html += renderFacilityMineralsList()
+    } else if (transientState.selectedFacility === 3) {
+        html += renderFacilityMineralsList()
+    } else if (transientState.selectedFacility === 5) {
+        html += renderFacilityMineralsList()
+    }
+    return html
+}
