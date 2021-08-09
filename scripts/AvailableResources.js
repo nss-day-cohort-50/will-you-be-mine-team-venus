@@ -7,7 +7,7 @@ const governors = getGovernors()
 const minerals = getMinerals()
 
 export const listAvailableResources = () => {
-    if (transientState.governorId > 0) {
+    if (transientState.chosenGovernor > 0) {
         let html = `<ul>`
 
         const foundGovernor = governors.find(
