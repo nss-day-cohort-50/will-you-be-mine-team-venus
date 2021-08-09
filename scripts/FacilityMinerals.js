@@ -46,9 +46,9 @@ export const renderFacilityMineralsList = () => {
             )
 
             if (foundChosenMineral.facilityId === facilityMineral.facilityId && foundChosenMineral.facilityMineralId === facilityMineral.id) {
-                html += `<input type="radio" name="mineral" value="${facilityMineral.id}" checked>${facilityMineral.amount} tons of ${mineral.name}</input>`
+                html += `<li><input type="radio" name="mineral" value="${facilityMineral.id}" checked>${facilityMineral.amount} tons of ${mineral.name}</input></li>`
             } else {
-                html += `<input type="radio" name="mineral" value="${facilityMineral.id}">${facilityMineral.amount} tons of ${mineral.name}</input>`
+                html += `<li><input type="radio" name="mineral" value="${facilityMineral.id}">${facilityMineral.amount} tons of ${mineral.name}</input></li>`
             }
 
         }
