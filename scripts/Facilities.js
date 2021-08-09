@@ -1,35 +1,40 @@
-import { getFacilities } from "./dataAccess.js"
+import { getFacilities, getTransientState, setFacility } from "./dataAccess.js"
 
 const facilities = getFacilities()
+const transientState = getTransientState()
 
-
-
-const listFacilities = () => {
-    let html = `<ul class="facility-button-list">`
-    
-    for (const facility of facilities) {
-        if(facility.isActive === true) {
-            html += `
-            <li><button class="facility-button">${facility.name}</button></li> 
-            ` 
+document.addEventListener("click",
+    (event) => {
+        const itemClicked = event.target.name
+        if (itemClicked.startsWith('facility-button')) {
+            const [, facilityId] = itemClicked.split("__")
+            for (const facility of facilities) {
+                if (facility.id === parseInt(facilityId)) {
+                    setFacility(parseInt(facilityId))
+                    document.dispatchEvent(new CustomEvent("stateChanged"))
+                }
+            }
         }
     }
-    
-    html += "</ul>"
-    return html
-}
+)
 
-
-export const renderFacilities = () => {
-    const facilitiesContainer = document.querySelector("#facilitiesContainer")
-    facilitiesContainer.innerHTML = listFacilities()
-}
-
-document.addEventListener("change",
-(event) => {
-    if (event.target.name === "governorMenu") {
-            renderFacilities()
+export const listFacilities = () => {
+    if (transientState.chosenGovernor > 0) {
+        let html = `<h2 class="select_facility">Select Facility</h2>`
+        
+        html += `<ul class="facility-button-list">`
+        
+        for (const facility of facilities) {
+            if (facility.isActive === true) {
+                html += `
+                <li><button class="facility-button__${facility.id}" name="facility-button__${facility.id}">${facility.name}</button></li>`
+            }
         }
+        
+        html += "</ul>"
+        
+        return html
+    } else {
+        return '<h2 class="select-governor">Select Your Governor</h2>'
     }
-    )
-
+}
