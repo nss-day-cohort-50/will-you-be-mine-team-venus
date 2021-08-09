@@ -1,6 +1,7 @@
 import { governors } from "./governors.js"
 import { listAvailableResources } from "./AvailableResources.js"
-import { listFacilities } from "./Facilities.js"
+import { listFacilities} from "./Facilities.js"
+import { listFacilityMinerals } from "./FacilityMinerals.js"
 
 export const venusExport = () => {
 
@@ -12,6 +13,7 @@ export const venusExport = () => {
     <article>
         <section id="facilitiesContainer" class="facilities">
             ${listFacilities()}
+            ${listFacilityMinerals()}
         </section>
     </article>
 

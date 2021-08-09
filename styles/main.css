@@ -41,3 +41,8 @@
 #orderButton {
     display: none;
 }
+
+.facility-minerals {
+    display: flex;
+    justify-content: space-between;
+}

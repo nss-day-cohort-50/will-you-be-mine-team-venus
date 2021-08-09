@@ -1,8 +1,18 @@
-import { getMineralAtFacility, getMinerals, getTransientState } from "./dataAccess.js";
+import { getFacilities, getMineralAtFacility, getMinerals, getTransientState } from "./dataAccess.js";
 
 const minerals = getMinerals()
 const transientState = getTransientState()
 const facilityResources = getMineralAtFacility()
+const facilities = getFacilities()
+
+// document.addEventListener("changed",
+//     (event) => {
+//         if(event.target.name === `facility-button__${facility.id}`){
+
+//             document.dispatchEvent(new CustomEvent("stateChanged"))
+//         }
+//     }
+// )
 
 export const renderFacilityMineralsList = () => {
     if (transientState.selectedFacility > 0) {
@@ -28,21 +38,17 @@ export const renderFacilityMineralsList = () => {
     } else {
         return ''
     }
-
 }
 
+export const listFacilityMinerals = () => {
+    let html = ''
+    for (const facility of facilities) {
+        html += `<section class="facility-minerals">`
+        if (facility.id === transientState.selectedFacility) {
+            html += `${renderFacilityMineralsList()}`
+        }
 
-
-// for (const facility of facilities) {
-//     if (facility.id === transientState.selectedFacility) {
-//         const foundMineralArray = minerals.filter(
-//             (mineral) => {
-//                 if (mineral.id === mineralAtFacility.mineralId) {
-//                     return `
-//                     <li>${mineralAtFacility.amount} tons of ${foundMineralArray.name}</li>
-//                     `
-//                 }
-//             }
-//         )
-//     }
-// }
+        html += `</section>`
+    }
+    return html
+}
