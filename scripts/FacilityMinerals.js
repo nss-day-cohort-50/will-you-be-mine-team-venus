@@ -17,7 +17,7 @@ const facilities = getFacilities()
 export const renderFacilityMineralsList = () => {
     if (transientState.selectedFacility > 0) {
         let html = `<h3>Available Minerals:</h3>`
-        html += `<ul>`
+        html += `<ul class="facility-mineral-list">`
 
         const foundFacilityResources = facilityResources.filter(
             (resource) => {

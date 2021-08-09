@@ -23,7 +23,7 @@ export const venusExport = () => {
 
     <article class="colonyResources">
         <section class="choices__governor options">
-        Governors:
+            <b>Governors:</b>
             ${governors()}
         </section>
         <section id="availableResources">

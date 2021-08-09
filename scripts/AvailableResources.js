@@ -8,8 +8,6 @@ const minerals = getMinerals()
 
 export const listAvailableResources = () => {
     if (transientState.chosenGovernor > 0) {
-        let html = `<ul>`
-
         const foundGovernor = governors.find(
             (governor) => {
                 return transientState.chosenGovernor === governor.id
@@ -22,6 +20,9 @@ export const listAvailableResources = () => {
             }
         )
 
+        let html = `<section class="colony-minerals"><h2>${foundColony.name}</h2>`
+        html += `<ul class="colony-mineral-list">`
+
         const foundAvailableResources = resources.filter(
             (resource) => {
                 return foundColony.id === resource.colonyId
@@ -31,12 +32,13 @@ export const listAvailableResources = () => {
         for (const resource of foundAvailableResources) {
             for (const mineral of minerals) {
                 if (mineral.id === resource.mineralId) {
+
                     html += `<li>${resource.amountPurchased} tons of ${mineral.name}</li>`
                 }
             }
         }
 
-        html += `</ul>`
+        html += `</ul></section>`
         return html
     } else {
         return `<h2>Colony Resources</h2>`

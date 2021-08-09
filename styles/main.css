@@ -1,10 +1,29 @@
+
+h1 {
+    text-align: center;
+}
+
+body {
+    color: white;
+}
+
+html { 
+    background: url('https://cdn.nerdschalk.com/wp-content/uploads/2020/10/among-us-space-background-15.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .colonyResources {
     display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
 }
 
 .facility-button-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     list-style-type: none;
 }
 
@@ -34,7 +53,7 @@
 }
 
 #facilitiesContainer {
-    border: 2px black solid;
+    border: 2px white solid;
     padding: 10px;
 }
 
@@ -42,7 +61,38 @@
     display: none;
 }
 
-.facility-minerals {
-    display: flex;
-    justify-content: space-between;
+.colony-mineral-list li{
+    list-style-type: '💎';
+    background-color: rgba(0, 0, 139, 0.5);
+    padding: 5px;
+}
+.colony-mineral-list li:nth-child(even){
+    list-style-type: '💎';
+    background-color: rgb(128, 128, 128, 0.5);
+    padding: 5px;
+}
+
+.facility-mineral-list li {
+    list-style-type: '💎';
+    background-color: rgba(0, 0, 139, 0.5);
+    padding: 5px;
+}
+.facility-mineral-list li:nth-child(even){
+    list-style-type: '💎';
+    background-color: rgb(128, 128, 128, 0.5);
+    padding: 5px;
+}
+
+.select-governor {
+    text-align: center;
+}
+
+.dropdown-menu {
+    background-color: rgba(47, 79, 79, 0.5);
+    color: white;
+    flex-direction: column;
+}
+.dropdown-menu option{
+    background-color: rgba(47, 79, 79);
+    color: white;
 }

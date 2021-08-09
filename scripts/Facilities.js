@@ -35,6 +35,6 @@ export const listFacilities = () => {
         
         return html
     } else {
-        return '<h2>Select Your Governor</h2>'
+        return '<h2 class="select-governor">Select Your Governor</h2>'
     }
 }
