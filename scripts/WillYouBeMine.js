@@ -1,25 +1,9 @@
-
-import { renderFacilities } from "./Facilities.js"
 import { governors } from "./governors.js"
 import { listAvailableResources } from "./AvailableResources.js"
+import { listFacilities} from "./Facilities.js"
+import { listFacilityMinerals } from "./FacilityMinerals.js"
 
-
-const renderResourcesHTML = () => {
-    const availableResources = document.querySelector("#availableResources")
-    availableResources.innerHTML = listAvailableResources()
-}
-
-document.addEventListener("change",
-(event) => {
-    if (event.target.name === "governorMenu") {
-            renderFacilities()
-            renderResourcesHTML()
-        }
-    }
-    )
-
-
-export const venusExport=() => {
+export const venusExport = () => {
 
 
 
@@ -28,6 +12,8 @@ export const venusExport=() => {
     
     <article>
         <section id="facilitiesContainer" class="facilities">
+            ${listFacilities()}
+            ${listFacilityMinerals()}
         </section>
     </article>
 
@@ -37,11 +23,11 @@ export const venusExport=() => {
 
     <article class="colonyResources">
         <section class="choices__governor options">
-        Governors:
+            <b>Governors:</b>
             ${governors()}
         </section>
         <section id="availableResources">
-            
+            ${listAvailableResources()}
         </section>
     </article>
     `

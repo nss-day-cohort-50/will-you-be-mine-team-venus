@@ -107,10 +107,83 @@ export const database = {
     mineralAtFacility: [
         {
             id: 1,
-            mineralId: 1,
             facilityId: 1,
-            amount: 0
-        }],
+            mineralId: 1,
+            amount: 650
+        },
+        {
+            id: 2,
+            facilityId: 1,
+            mineralId: 2,
+            amount: 650
+        },
+        {
+            id: 3,
+            facilityId: 1,
+            mineralId: 3,
+            amount: 650
+        },
+        {
+            id: 4,
+            facilityId: 1,
+            mineralId: 4,
+            amount: 650
+        },
+        {
+            id: 5,
+            facilityId: 2,
+            mineralId: 1,
+            amount: 800
+        },
+        {
+            id: 6,
+            facilityId: 2,
+            mineralId: 2,
+            amount: 800
+        },
+        {
+            id: 7,
+            facilityId: 2,
+            mineralId: 3,
+            amount: 800
+        },
+        {
+            id: 8,
+            facilityId: 2,
+            mineralId: 4,
+            amount: 800
+        },
+        {
+            id: 9,
+            facilityId: 3,
+            mineralId: 1,
+            amount: 100
+        },
+        {
+            id: 10,
+            facilityId: 3,
+            mineralId: 4,
+            amount: 100
+        },
+        {
+            id: 11,
+            facilityId: 4,
+            mineralId: 2,
+            amount: 800
+        },
+        {
+            id: 12,
+            facilityId: 4,
+            mineralId: 3,
+            amount: 100
+        },
+        {
+            id: 13,
+            facilityId: 4,
+            mineralId: 4,
+            amount: 100
+        }
+    ],
     availableResources: [
         {
             id: 1,
