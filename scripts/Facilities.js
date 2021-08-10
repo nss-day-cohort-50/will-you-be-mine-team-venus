@@ -5,15 +5,19 @@ const transientState = getTransientState()
 
 document.addEventListener("click",
     (event) => {
-        const itemClicked = event.target.name
-        if (itemClicked.startsWith('facility-button')) {
+        try {
+            const itemClicked = event.target.name
             const [, facilityId] = itemClicked.split("__")
             for (const facility of facilities) {
-                if (facility.id === parseInt(facilityId)) {
-                    setFacility(parseInt(facilityId))
+                if (itemClicked.startsWith('facility-button')) {
+                    if (facility.id === parseInt(facilityId)) {
+                        setFacility(parseInt(facilityId))
+                    }
+                    setBackground()
                 }
-                setBackground()
             }
+        } catch (error) {
+            console.log('Button not clicked')
         }
     }
 )

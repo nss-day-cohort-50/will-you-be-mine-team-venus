@@ -1,13 +1,17 @@
 @import url('colony.css');
 @import url('facilities.css');
 @import url('minerals.css');
+@import url('https://allfont.net/allfont.css?fonts=star-jedi');
+@import url('//db.onlinewebfonts.com/c/c00548f5d217ed324ae9096051927001?family=STARWARS');
 
 h1 {
     text-align: center;
 }
 
 body {
+    font-family: 'STARWARS', arial;
     color: white;
+    letter-spacing: 0.1em;
 }
 
 html { 
