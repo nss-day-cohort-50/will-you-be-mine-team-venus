@@ -1,0 +1,28 @@
+.available-minerals {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.facility-mineral-list {
+    margin-top: 5px;
+}
+
+.facility-mineral-list li {
+    list-style-type: '💎';
+    background-color: rgba(0, 0, 139, 0.5);
+    margin-left: -10px;
+}
+.facility-mineral-list li:nth-child(even){
+    list-style-type: '💎';
+    background-color: rgb(128, 128, 128, 0.5);
+    margin-left: -10px;
+}
+
+.list-of-minerals {
+    display: flex;
+}
+
+.mineral-list {
+    justify-content: space-around;
+    flex-basis: 25%;
+}

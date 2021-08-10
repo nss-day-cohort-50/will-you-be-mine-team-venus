@@ -1,10 +1,17 @@
+@import url('colony.css');
+@import url('facilities.css');
+@import url('minerals.css');
+@import url('https://allfont.net/allfont.css?fonts=star-jedi');
+@import url('//db.onlinewebfonts.com/c/c00548f5d217ed324ae9096051927001?family=STARWARS');
 
 h1 {
     text-align: center;
 }
 
 body {
+    font-family: 'STARWARS', arial;
     color: white;
+    letter-spacing: 0.1em;
 }
 
 html { 
@@ -14,89 +21,3 @@ html {
     -o-background-size: cover;
     background-size: cover;
 }
-
-.colonyResources {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 20px;
-}
-
-.facility-button-list {
-    display: flex;
-    justify-content: space-evenly;
-    list-style-type: none;
-}
-
-.facility-button {
-    font-size: 30px;
-}
-
-.facility-button__1 {
-    background-color: forestgreen;
-    font-size: 30px;
-}
-.facility-button__2 {
-    background-color: sandybrown;
-    font-size: 30px;
-}
-.facility-button__3 {
-    background-color: lightskyblue;
-    font-size: 30px;
-}
-.facility-button__4 {
-    background-color: darkgrey;
-    font-size: 30px;
-}
-
-.select_facility {
-    text-align: center;
-}
-
-#facilitiesContainer {
-    border: 2px white solid;
-    padding: 10px;
-}
-
-#orderButton {
-    display: none;
-}
-
-.colony-mineral-list li{
-    list-style-type: '💎';
-    background-color: rgba(0, 0, 139, 0.5);
-    padding: 5px;
-}
-.colony-mineral-list li:nth-child(even){
-    list-style-type: '💎';
-    background-color: rgb(128, 128, 128, 0.5);
-    padding: 5px;
-}
-
-.facility-mineral-list li  {
-    list-style-type: none;
-    background-color: rgba(0, 0, 139, 0.5);
-    padding: 5px;
-   
-}
-
-
-.facility-mineral-list li:nth-child(even){
-    list-style-type: none;
-    background-color: rgb(128, 128, 128, 0.5);
-    padding: 5px;
-}
-
-.select-governor {
-    text-align: center;
-}
-
-.dropdown-menu {
-    background-color: rgba(47, 79, 79, 0.5);
-    color: white;
-    flex-direction: column;
-}
-.dropdown-menu option{
-    background-color: rgba(47, 79, 79);
-    color: white;
-}
-

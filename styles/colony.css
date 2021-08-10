@@ -1,0 +1,30 @@
+.colony-mineral-list li{
+    list-style-type: '💎';
+    background-color: rgba(0, 0, 139, 0.5);
+    padding-right: 0px
+}
+.colony-mineral-list li:nth-child(even){
+    list-style-type: '💎';
+    background-color: rgb(128, 128, 128, 0.5);
+    padding-right: 0px
+}
+
+.colonyResources {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+.dropdown-menu {
+    background-color: rgba(47, 79, 79, 0.5);
+    color: white;
+    flex-direction: column;
+}
+.dropdown-menu option{
+    background-color: rgba(47, 79, 79);
+    color: white;
+}
+
+.select-governor {
+    text-align: center;
+}
