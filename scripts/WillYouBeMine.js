@@ -2,6 +2,7 @@ import { governors } from "./governors.js"
 import { listAvailableResources } from "./AvailableResources.js"
 import { listFacilities } from "./Facilities.js"
 import { renderSections } from "./FacilityMinerals.js"
+import { chosenMineralsList } from "./ChosenMinerals.js"
 
 export const venusExport = () => {
 
@@ -18,6 +19,9 @@ export const venusExport = () => {
     </article>
 
     <article>
+        <section class="chosen-minerals">
+            ${chosenMineralsList()}
+        </section>
         <button id="orderButton">Create Custom Order</button>
     </article>
 
