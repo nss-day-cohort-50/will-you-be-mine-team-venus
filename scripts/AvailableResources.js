@@ -7,6 +7,12 @@ const governors = getGovernors()
 const minerals = getMinerals()
 
 export const listAvailableResources = () => {
+    const resources = getAvailableResources()
+    const transientState = getTransientState()
+    const colonies = getColonies()
+    const governors = getGovernors()
+    const minerals = getMinerals()
+
     if (transientState.chosenGovernor > 0) {
         const foundGovernor = governors.find(
             (governor) => {

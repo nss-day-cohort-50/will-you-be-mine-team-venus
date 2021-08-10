@@ -40,18 +40,24 @@ const subtractFromFacility = () => {
 
 const addToColony = () => {
     const foundColony = getGovernorColony()
-    const foundAvailableResources = availableResources.find(
-        (resource) => {
-            for (const mineral of minerals) {
-                return resource.colonyId === foundColony.id && resource.mineralId === mineral.id
+    const foundMineral = facilityMinerals.find(
+        (mineral) => {
+            for (const chosenMineral of chosenMinerals) {
+                return chosenMineral.facilityMineralId === mineral.id
             }
         }
     )
-    foundAvailableResources.amountPurchased += 1
+    const foundAvailableResource = availableResources.find(
+        (resource) => {
+            return resource.colonyId === foundColony.id && resource.mineralId === foundMineral.mineralId
+        }
+    )
+    return foundAvailableResource.amountPurchased += 1
 
-    setColonyAmount(foundAvailableResources.amountPurchased)
-    console.log(availableResources)
+    // foundAvailableResources.amountPurchased += 1
+    // setColonyAmount(foundAvailableResources.amountPurchased)  
 }
+
 
 export const addCustomerOrder = () => {
     subtractFromFacility()
@@ -64,6 +70,6 @@ export const addCustomerOrder = () => {
         }
     )
     console.log(transientState)
-
+    console.log(availableResources)
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
