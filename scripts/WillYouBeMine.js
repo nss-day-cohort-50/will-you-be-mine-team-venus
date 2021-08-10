@@ -3,6 +3,17 @@ import { listAvailableResources } from "./AvailableResources.js"
 import { listFacilities } from "./Facilities.js"
 import { renderSections } from "./FacilityMinerals.js"
 import { chosenMineralsList } from "./ChosenMinerals.js"
+import { addCustomerOrder } from "./PurchaseMinerals.js"
+
+document.addEventListener("click",
+    (event) => {
+        if (event.target.name === 'orderButton') {
+            addCustomerOrder()
+            console.log('button was clicked')
+            document.dispatchEvent(new CustomEvent("stateChanged"))
+        }
+    }
+)
 
 export const venusExport = () => {
 
