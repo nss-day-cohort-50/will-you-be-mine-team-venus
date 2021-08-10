@@ -377,27 +377,27 @@ export const database = {
             mineralId: 4,
             amountPurchased: 100
         },
-],
-        transientState: {
-            chosenMinerals: [
-                {
-                    facilityId: 1,
-                    facilityMineralId: 0,
-                },
-                {
-                    facilityId: 2,
-                    facilityMineralId: 0
-                },
-                {
-                    facilityId: 3,
-                    facilityMineralId: 0
-                },
-                {
-                    facilityId: 4,
-                    facilityMineralId: 0
-                }
-            ],
-            selectedFacility: 0,
-            chosenGovernor: 0
-        }
+    ],
+    transientState: {
+        chosenMinerals: [
+            {
+                facilityId: 1,
+                facilityMineralId: 0,
+            },
+            {
+                facilityId: 2,
+                facilityMineralId: 0
+            },
+            {
+                facilityId: 3,
+                facilityMineralId: 0
+            },
+            {
+                facilityId: 4,
+                facilityMineralId: 0
+            }
+        ],
+        selectedFacility: 0,
+        chosenGovernor: 0
+    }
 }

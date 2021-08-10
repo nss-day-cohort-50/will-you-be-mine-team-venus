@@ -1,0 +1,35 @@
+#facilitiesContainer {
+    border: 2px white solid;
+    padding: 10px;
+}
+
+.facility-button-list {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+.facility-button {
+    font-size: 30px;
+}
+
+.facility-button__1 {
+    background-color: forestgreen;
+    font-size: 30px;
+}
+.facility-button__2 {
+    background-color: sandybrown;
+    font-size: 30px;
+}
+.facility-button__3 {
+    background-color: lightskyblue;
+    font-size: 30px;
+}
+.facility-button__4 {
+    background-color: darkgrey;
+    font-size: 30px;
+}
+
+.select_facility {
+    text-align: center;
+}

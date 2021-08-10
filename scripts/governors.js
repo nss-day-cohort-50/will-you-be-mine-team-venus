@@ -23,15 +23,16 @@ export const governors = () => {
 
     for (const governor of governorsArray) {
         if (governor.isActive === true) {
-            if(governor.id === transientStateGovernor.chosenGovernor) {
-            HTML += `<option name="governor" value="${governor.id}" selected>
+            if (governor.id === transientStateGovernor.chosenGovernor) {
+                HTML += `<option name="governor" value="${governor.id}" selected>
             ${governor.name}
             </option>`
-        } else { HTML += `<option name="governor" value="${governor.id}">
+            } else {
+                HTML += `<option name="governor" value="${governor.id}">
         ${governor.name}
         </option>`
 
-        }
+            }
         }
     }
     HTML += "</select>"

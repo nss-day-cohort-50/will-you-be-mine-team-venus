@@ -1,7 +1,7 @@
 import { governors } from "./governors.js"
 import { listAvailableResources } from "./AvailableResources.js"
-import { listFacilities} from "./Facilities.js"
-import { listFacilityMinerals, renderSections } from "./FacilityMinerals.js"
+import { listFacilities } from "./Facilities.js"
+import { renderSections } from "./FacilityMinerals.js"
 
 export const venusExport = () => {
 

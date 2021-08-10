@@ -1,27 +1,27 @@
 import { database } from "./database.js"
 
 export const getGovernors = () => {
-    return database.governors.map(governor => ({...governor}))
+    return database.governors.map(governor => ({ ...governor }))
 }
 
 export const getMinerals = () => {
-    return database.minerals.map(mineral => ({...mineral}))
+    return database.minerals.map(mineral => ({ ...mineral }))
 }
 
 export const getFacilities = () => {
-    return database.facilities.map(facility => ({...facility}))
+    return database.facilities.map(facility => ({ ...facility }))
 }
 
 export const getColonies = () => {
-    return database.colonies.map(colony => ({...colony}))
+    return database.colonies.map(colony => ({ ...colony }))
 }
 
 export const getMineralAtFacility = () => {
-    return database.mineralAtFacility.map(mineral => ({...mineral}))
+    return database.mineralAtFacility.map(mineral => ({ ...mineral }))
 }
 
 export const getAvailableResources = () => {
-    return database.availableResources.map(mineral => ({...mineral}))
+    return database.availableResources.map(mineral => ({ ...mineral }))
 }
 
 export const setChosenMineral = (resourceId) => {
@@ -53,8 +53,8 @@ export const getTransientState = () => {
 
 export const addCustomerOrder = () => {
     //Copy the current state of user choices
-    const newOrder = {...database.chosenMinerals}
-    
+    const newOrder = { ...database.chosenMinerals }
+
     //Add a new primary key to the object
     const lastIndex = database.availableResources.length - 1
     newOrder.id = database.availableResources[lastIndex].id + 1

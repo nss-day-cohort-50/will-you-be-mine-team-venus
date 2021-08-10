@@ -1,5 +1,6 @@
 import { getFacilities, getMineralAtFacility, getMinerals, getTransientState, setChosenMineral } from "./dataAccess.js";
 import { database } from "./database.js";
+import { setBackground } from "./Facilities.js";
 
 const minerals = getMinerals()
 const transientState = getTransientState()
@@ -12,6 +13,7 @@ document.addEventListener(
     (event) => {
         if (event.target.name === "mineral") {
             setChosenMineral(parseInt(event.target.value))
+            setBackground()
         }
     }
 )
@@ -21,7 +23,7 @@ export const renderFacilityMineralsList = () => {
     const chosenMinerals = database.transientState.chosenMinerals;
 
     if (transientState.selectedFacility > 0) {
-        let html = `<h3>Available Minerals:</h3>`
+        let html = `<h3 class="available-minerals">Available Minerals:</h3>`
         html += `<ul class="facility-mineral-list">`
 
 
