@@ -22,7 +22,7 @@ export const venusExport = () => {
         <section class="chosen-minerals">
             ${chosenMineralsList()}
         </section>
-        <button id="orderButton">Create Custom Order</button>
+        <button id="orderButton" name="orderButton">Purchase Minerals</button>
     </article>
 
     <article class="colonyResources">

@@ -1,4 +1,5 @@
 import { database } from "./database.js"
+import { governors } from "./governors.js"
 
 export const getGovernors = () => {
     return database.governors.map(governor => ({ ...governor }))
@@ -49,21 +50,4 @@ export const setFacility = (id) => {
 
 export const getTransientState = () => {
     return database.transientState
-}
-
-export const addCustomerOrder = () => {
-    //Copy the current state of user choices
-    const newOrder = { ...database.chosenMinerals }
-
-    //Add a new primary key to the object
-    const lastIndex = database.availableResources.length - 1
-    newOrder.id = database.availableResources[lastIndex].id + 1
-
-    //Add the new order object to custom orders state
-    database.availableResources.push(newOrder)
-
-    //Reset the temporary state for user choices
-    database.chosenMinerals = {}
-
-    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
