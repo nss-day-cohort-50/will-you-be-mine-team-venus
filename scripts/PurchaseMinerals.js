@@ -32,9 +32,8 @@ const subtractFromFacility = () => {
                 (facilityMineral) => {
                     return facilityMineral.id === chosenMineral.facilityMineralId
                 }
-                )
-                foundMineralAtFacility.amount -= 1
-                console.log(facilityMinerals)
+            )
+            return foundMineralAtFacility.amount -= 1
         }
     }
 }

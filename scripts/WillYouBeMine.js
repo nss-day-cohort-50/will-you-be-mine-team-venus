@@ -17,15 +17,14 @@ document.addEventListener("click",
 
 export const venusExport = () => {
 
-
-
     return `
     <h1>Will You Be Mine? Team Venus</h1>
     
     <article>
         <section id="facilitiesContainer" class="facilities">
             ${listFacilities()}
-            <section class="list-of-minerals"> ${renderSections()}</section>
+            <section class="list-of-minerals">
+                ${renderSections()}</section>
         </section>
     </article>
 
